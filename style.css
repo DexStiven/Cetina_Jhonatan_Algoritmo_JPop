@@ -1,12 +1,12 @@
 :root {
   --bg: #050807;
-  --panel: #0b0f0d;
-  --panel2: #0f1512;
-  --border: #1e2a24;
+  --panel: #0c1210;
+  --panel2: #141c18;
+  --border: #1f2e27;
   --text: #eafff2;
   --muted: rgba(234,255,242,.7);
   --green: #00ff9c;
-  --green2: #3cffb5;
+  --green-soft: #7fffd4;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
@@ -16,14 +16,15 @@ body {
   color: var(--text);
 }
 
+/* Layout */
 .wrap {
   max-width: 980px;
   margin: 0 auto;
   padding: 18px;
 }
 
-h1 {
-  margin: 8px 0;
+h1, h2 {
+  color: var(--green);
 }
 
 .sub {
@@ -41,6 +42,7 @@ h1 {
   }
 }
 
+/* Cards */
 .card {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -48,11 +50,12 @@ h1 {
   padding: 14px;
 }
 
+/* Forms */
 label {
   display: block;
   margin-top: 10px;
   margin-bottom: 6px;
-  color: var(--muted);
+  color: var(--green-soft);
 }
 
 select {
@@ -64,6 +67,7 @@ select {
   color: var(--text);
 }
 
+/* Buttons */
 .row {
   display: flex;
   gap: 10px;
@@ -80,7 +84,11 @@ button {
 
 .primary {
   background: var(--green);
-  color: #001a10;
+  color: #002016;
+}
+
+.primary:hover {
+  filter: brightness(1.1);
 }
 
 .ghost {
@@ -91,20 +99,24 @@ button {
 
 .danger {
   background: #7a1f1f;
-  color: var(--text);
+  color: #ffffff;
 }
 
+/* Pregunta (ESTO SOLUCIONA TU PROBLEMA) */
 .question {
-  background: var(--panel2);
-  border: 1px solid var(--border);
-  padding: 10px;
+  background: #0f1f18;
+  border: 1px solid var(--green);
+  padding: 12px;
   border-radius: 12px;
+  color: var(--green-soft);
+  font-weight: 600;
 }
 
+/* Duelo A/B */
 .duel {
   display: grid;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 @media (min-width: 900px) {
@@ -114,16 +126,19 @@ button {
 }
 
 .pick {
-  background: var(--panel2);
+  background: #0f1f18;
   border: 1px solid var(--border);
   text-align: left;
-  padding: 14px;
+  padding: 16px;
+  color: var(--text);
 }
 
 .pick:hover {
   border-color: var(--green);
+  background: #132a21;
 }
 
+/* A / B tag */
 .tag {
   display: inline-block;
   width: 26px;
@@ -133,10 +148,11 @@ button {
   line-height: 26px;
   margin-right: 10px;
   background: var(--green);
-  color: #001a10;
+  color: #002016;
   font-weight: 900;
 }
 
+/* Ranking */
 .topbox {
   background: var(--panel2);
   border: 1px solid var(--border);
@@ -152,6 +168,12 @@ button {
   border-bottom: 1px solid var(--border);
 }
 
-.hint, .foot {
+.toprow:last-child {
+  border-bottom: 0;
+}
+
+/* Footer & hints */
+.hint,
+.foot {
   color: var(--muted);
 }
